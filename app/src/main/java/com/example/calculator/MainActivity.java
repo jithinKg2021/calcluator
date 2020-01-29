@@ -20,14 +20,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btnThree;
     Button btnAdd;
     Button btnMult;
-    Button btnSubtract;
+    Button buttonSubtraction;
     Button btnDivision;
     Button btnEquals;
     Button btnClear;
 
     String inputValue = "";
     TextView textViewResult;
+    TextView textViewShowResult;
     String operator = "";
+    Double num1 ;
+    Double num2 ;
+    Double result;
 
 
     @Override
@@ -48,7 +52,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnOne = findViewById(R.id.button1);
         btnTwo = findViewById(R.id.button2);
         btnThree = findViewById(R.id.button3);
+
         btnAdd = findViewById(R.id.buttonAdd);
+        buttonSubtraction = findViewById(R.id.buttonSubtraction);
+
 
         btnSeven.setOnClickListener((View.OnClickListener) this);
         btnEight.setOnClickListener((View.OnClickListener) this);
@@ -59,8 +66,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnOne.setOnClickListener((View.OnClickListener) this);
         btnTwo.setOnClickListener((View.OnClickListener) this);
         btnThree.setOnClickListener((View.OnClickListener) this);
-//        btnAdd.setOnClickListener();
+        btnAdd.setOnClickListener( (View.OnClickListener) this);
+        buttonSubtraction.setOnClickListener((View.OnClickListener)this);
+
         textViewResult = findViewById(R.id.textView1);
+        textViewShowResult = findViewById(R.id.textView2);
+
 
     }
 
@@ -68,9 +79,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (v.getId()){
             case R.id.button7:
-                Log.i("BTNCLICK", "clicked");
                 inputValue += "7";
-                updateResultTextView(inputValue);
+                if(checkIfOperatorPressed(operator)){
+                    if(operator.equals("+")){
+                       num2 = 7.0;
+
+                        result =  num1 + num2;
+                        num1 = result;
+                        updateShowResultTextView(result);
+                        updateResultTextView(inputValue);
+                    }else if(operator.equals("-") ){
+                        num2 = 7.0;
+
+                        result =  num1 - num2;
+                        num1 = result;
+                    }
+
+                }else {
+                    num1 = 7.0;
+                    Log.i("BTNCLICK", "clicked");
+
+                    updateResultTextView(inputValue);
+                }
 
                 break;
             case R.id.button8:
@@ -78,17 +108,51 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 inputValue += "8";
                 updateResultTextView(inputValue);
                 break;
+            case R.id.buttonSubtraction:
+                Log.i("BTNSUBT", "subtract button clicked");
+                String lastElement = inputValue.substring(inputValue.length() - 1);
+                if(!lastElement.equals("-")){
+                    if(operator == null || operator.isEmpty()){
+                        operator = "-";
+                        inputValue += "-";
+                    }else {
+                        inputValue = inputValue + "-";
+                    }
+                }
+                break;
             case R.id.buttonAdd:
                 Log.i("ADDBTN", "Add button clicked");
-                if(operator == null || operator.isEmpty()){
-                    Log.i("OPERATORPRESSED", "operator is pressed firstTime");
-                }else {
-                    Log.i("OPERATORPRESSED", "opeartor is not empty");
+                 lastElement = inputValue.substring(inputValue.length() - 1);
+                if(!lastElement.equals("+")){
+                    if(operator == null || operator.isEmpty()){
+                        operator = "+";
+                        inputValue += "+";
+                        Log.i("OPERATORPRESSED", "operator is pressed firstTime");
+                    }else {
+                        inputValue = inputValue + "+";
+                        Log.i("LASTELEMENT",lastElement);
+
+
+                        Log.i("OPERATORPRESSED", "opeartor is not empty");
+                    }
                 }
-                operator = "+";
+                break;
 
-                updateResultTextView(inputValue);
 
+        }
+        updateResultTextView(inputValue);
+
+    }
+
+    private void updateShowResultTextView(Double result) {
+        textViewShowResult.setText(result.toString());
+    }
+
+    private boolean checkIfOperatorPressed(String inputValue) {
+        if(operator == null || operator.isEmpty()){
+            return false;
+        }else {
+            return true;
         }
     }
 
