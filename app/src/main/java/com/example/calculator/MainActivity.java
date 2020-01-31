@@ -89,14 +89,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         result =  num1 + num2;
                         num1 = result;
                         updateShowResultTextView(result);
-                        updateResultTextView(inputValue);
+//                        updateResultTextView(inputValue);
                     }else if(operator.equals("-") ){
                         num2 = 7.0;
 
                         result =  num1 - num2;
                         num1 = result;
                         updateShowResultTextView(result);
-                        updateResultTextView(inputValue);
+//                        updateResultTextView(inputValue);
 
 
                     }
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     num1 = 7.0;
                     Log.i("BTNCLICK", "clicked");
 
-                    updateResultTextView(inputValue);
+//                    updateResultTextView(inputValue);
                 }
 
                 break;
@@ -116,6 +116,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.buttonSubtraction:
                 Log.i("BTNSUBT", "subtract button clicked");
+                operator = "-";
                 String lastElement = inputValue.substring(inputValue.length() - 1);
                 if(!lastElement.equals("-")){
                     if(operator == null || operator.isEmpty()){
@@ -129,7 +130,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.buttonAdd:
                 Log.i("ADDBTN", "Add button clicked");
-                 lastElement = inputValue.substring(inputValue.length() - 1);
+                operator = "+";
+
+                lastElement = inputValue.substring(inputValue.length() - 1);
                 if(!lastElement.equals("+")){
                     if(operator == null || operator.isEmpty()){
                         operator = "+";
