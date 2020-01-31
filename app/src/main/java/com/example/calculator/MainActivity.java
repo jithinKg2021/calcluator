@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnSix.setOnClickListener((View.OnClickListener) this);
         btnOne.setOnClickListener((View.OnClickListener) this);
         btnTwo.setOnClickListener((View.OnClickListener) this);
+
         btnThree.setOnClickListener((View.OnClickListener) this);
         btnAdd.setOnClickListener( (View.OnClickListener) this);
         buttonSubtraction.setOnClickListener((View.OnClickListener)this);
@@ -147,6 +148,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         inputValue = inputValue + "-";
                     }
                 }
+                break;
+            case R.id.btnClearBtn:
+                operator = "";
+                inputValue = "";
+                num1 = 0.0;
+                num2 = 0.0;
+                result = 0.0;
+                textViewShowResult.setText("");
+
+
                 break;
             case  R.id.buttonMultiply:
                 operator = "*";
