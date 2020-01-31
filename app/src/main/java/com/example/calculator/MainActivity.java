@@ -19,12 +19,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btnTwo;
     Button btnThree;
     Button btnAdd;
-    Button btnMult;
+    Button buttonMultiply;
     Button buttonSubtraction;
-    Button btnDivision;
+    Button buttonDivide;
     Button btnEquals;
     Button btnClearBtn;
 
+    String lastElement="";
     String inputValue = "";
     TextView textViewResult;
     TextView textViewShowResult;
@@ -53,6 +54,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnTwo = findViewById(R.id.button2);
         btnThree = findViewById(R.id.button3);
         btnClearBtn = findViewById(R.id.btnClearBtn);
+        buttonMultiply = findViewById(R.id.buttonMultiply);
+        buttonDivide = findViewById(R.id.buttonDivide);
 
         btnAdd = findViewById(R.id.buttonAdd);
         buttonSubtraction = findViewById(R.id.buttonSubtraction);
@@ -70,6 +73,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnAdd.setOnClickListener( (View.OnClickListener) this);
         buttonSubtraction.setOnClickListener((View.OnClickListener)this);
         btnClearBtn.setOnClickListener((View.OnClickListener)this);
+        buttonMultiply.setOnClickListener((View.OnClickListener) this);
+        buttonDivide.setOnClickListener((View.OnClickListener) this);
 
         textViewResult = findViewById(R.id.textView1);
         textViewShowResult = findViewById(R.id.textView2);
@@ -100,6 +105,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
                     }
+                    else if(operator.equals("*") ){
+                        num2 = 7.0;
+
+                        result =  num1 * num2;
+                        num1 = result;
+                        updateShowResultTextView(result);
+//                        updateResultTextView(inputValue);
+
+
+                    }else if(operator.equals("/")){
+                        num2 = 7.0;
+
+                        result =  num1 / num2;
+                        num1 = result;
+                        updateShowResultTextView(result);
+                    }
 
                 }else {
                     num1 = 7.0;
@@ -117,7 +138,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.buttonSubtraction:
                 Log.i("BTNSUBT", "subtract button clicked");
                 operator = "-";
-                String lastElement = inputValue.substring(inputValue.length() - 1);
+                 lastElement = inputValue.substring(inputValue.length() - 1);
                 if(!lastElement.equals("-")){
                     if(operator == null || operator.isEmpty()){
                         operator = "-";
@@ -126,6 +147,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         inputValue = inputValue + "-";
                     }
                 }
+                break;
+            case  R.id.buttonMultiply:
+                operator = "*";
+                 lastElement = inputValue.substring(inputValue.length() - 1);
+                if(!lastElement.equals("*")){
+                    if(operator == null || operator.isEmpty()){
+                        operator = "*";
+                        inputValue += "*";
+                    }else {
+                        inputValue = inputValue + "*";
+                    }
+                }
+
+                break;
+                /*divide*/
+            case  R.id.buttonDivide:
+                operator = "/";
+                lastElement = inputValue.substring(inputValue.length() - 1);
+                if(!lastElement.equals("/")){
+                    if(operator == null || operator.isEmpty()){
+                        operator = "/";
+                        inputValue += "/";
+                    }else {
+                        inputValue = inputValue + "/";
+                    }
+                }
+
                 break;
 
             case R.id.buttonAdd:
