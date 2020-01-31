@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button buttonSubtraction;
     Button btnDivision;
     Button btnEquals;
-    Button btnClear;
+    Button btnClearBtn;
 
     String inputValue = "";
     TextView textViewResult;
@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnOne = findViewById(R.id.button1);
         btnTwo = findViewById(R.id.button2);
         btnThree = findViewById(R.id.button3);
+        btnClearBtn = findViewById(R.id.btnClearBtn);
 
         btnAdd = findViewById(R.id.buttonAdd);
         buttonSubtraction = findViewById(R.id.buttonSubtraction);
@@ -68,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnThree.setOnClickListener((View.OnClickListener) this);
         btnAdd.setOnClickListener( (View.OnClickListener) this);
         buttonSubtraction.setOnClickListener((View.OnClickListener)this);
+        btnClearBtn.setOnClickListener((View.OnClickListener)this);
 
         textViewResult = findViewById(R.id.textView1);
         textViewShowResult = findViewById(R.id.textView2);
@@ -93,6 +95,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                         result =  num1 - num2;
                         num1 = result;
+                        updateShowResultTextView(result);
+                        updateResultTextView(inputValue);
+
+
                     }
 
                 }else {
@@ -120,6 +126,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 }
                 break;
+
             case R.id.buttonAdd:
                 Log.i("ADDBTN", "Add button clicked");
                  lastElement = inputValue.substring(inputValue.length() - 1);
@@ -144,9 +151,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    private void updateShowResultTextView(Double result) {
-        textViewShowResult.setText(result.toString());
-    }
+
 
     private boolean checkIfOperatorPressed(String inputValue) {
         if(operator == null || operator.isEmpty()){
@@ -154,6 +159,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }else {
             return true;
         }
+    }
+    private void updateShowResultTextView(Double result) {
+        textViewShowResult.setText(result.toString());
     }
 
     private void updateResultTextView(String inputValue) {
