@@ -7,7 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42592c12-171a-413c-9702-b86353939bbc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/calculator/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/calculator/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../calculator/.idea/encodings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../calculator/.idea/gradle.xml" beforeDir="false" />
@@ -87,8 +86,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/calculator/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="157" column="44" selection-start-line="157" selection-start-column="44" selection-end-line="157" selection-end-column="44" />
+            <state relative-caret-position="152">
+              <caret line="79" column="68" lean-forward="true" selection-start-line="79" selection-start-column="68" selection-end-line="79" selection-end-column="68" />
               <folding>
                 <element signature="e#6579#6580#0" expanded="true" />
                 <element signature="e#6629#6630#0" expanded="true" />
@@ -270,7 +269,7 @@
       <window_info anchor="bottom" id="TODO" />
       <window_info anchor="bottom" id="Android Profiler" />
       <window_info anchor="bottom" id="Debug" weight="0.32899022" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.18566775" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.1286645" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Build" weight="0.32954547" />
       <window_info anchor="right" id="Device File Explorer" side_tool="true" />
@@ -286,91 +285,91 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/calculator/MainActivity.java</url>
-          <line>95</line>
+          <line>98</line>
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/calculator/MainActivity.java</url>
-          <line>92</line>
+          <line>95</line>
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/calculator/MainActivity.java</url>
-          <line>211</line>
+          <line>215</line>
           <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/calculator/MainActivity.java</url>
-          <line>98</line>
+          <line>101</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/calculator/MainActivity.java</url>
-          <line>99</line>
+          <line>102</line>
           <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/calculator/MainActivity.java</url>
-          <line>102</line>
+          <line>105</line>
           <properties />
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/calculator/MainActivity.java</url>
-          <line>101</line>
+          <line>104</line>
           <properties />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/calculator/MainActivity.java</url>
-          <line>103</line>
+          <line>106</line>
           <properties />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/calculator/MainActivity.java</url>
-          <line>143</line>
+          <line>146</line>
           <properties />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/calculator/MainActivity.java</url>
-          <line>138</line>
+          <line>141</line>
           <properties />
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/calculator/MainActivity.java</url>
-          <line>139</line>
+          <line>142</line>
           <properties />
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/calculator/MainActivity.java</url>
-          <line>141</line>
+          <line>144</line>
           <properties />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/calculator/MainActivity.java</url>
-          <line>190</line>
+          <line>194</line>
           <properties />
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/calculator/MainActivity.java</url>
-          <line>191</line>
+          <line>195</line>
           <properties />
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/calculator/MainActivity.java</url>
-          <line>88</line>
+          <line>91</line>
           <properties />
           <option name="timeStamp" value="18" />
         </line-breakpoint>
@@ -393,8 +392,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/calculator/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="157" column="44" selection-start-line="157" selection-start-column="44" selection-end-line="157" selection-end-column="44" />
+        <state relative-caret-position="152">
+          <caret line="79" column="68" lean-forward="true" selection-start-line="79" selection-start-column="68" selection-end-line="79" selection-end-column="68" />
           <folding>
             <element signature="e#6579#6580#0" expanded="true" />
             <element signature="e#6629#6630#0" expanded="true" />
