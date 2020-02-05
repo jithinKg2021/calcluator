@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Double num1 ;
     Double num2 ;
     Double result;
+    Double numberPressed;
 
 
     @Override
@@ -91,47 +92,44 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
             case R.id.button7:
                 inputValue += "7";
-                if(checkIfOperatorPressed(operator)){
-                    if(operator.equals("+")){
-                       num2 = 7.0;
+                numberPressed = 7.0;
+                doMathOperation(operator, numberPressed);
 
-                        result =  num1 + num2;
-                        num1 = result;
-                        updateShowResultTextView(result);
-//                        updateResultTextView(inputValue);
-                    }else if(operator.equals("-") ){
-                        num2 = 7.0;
-
-                        result =  num1 - num2;
-                        num1 = result;
-                        updateShowResultTextView(result);
-//                        updateResultTextView(inputValue);
-
-
-                    }
-                    else if(operator.equals("*") ){
-                        num2 = 7.0;
-
-                        result =  num1 * num2;
-                        num1 = result;
-                        updateShowResultTextView(result);
-//                        updateResultTextView(inputValue);
-
-
-                    }else if(operator.equals("/")){
-                        num2 = 7.0;
-
-                        result =  num1 / num2;
-                        num1 = result;
-                        updateShowResultTextView(result);
-                    }
-
-                }else {
-                    num1 = 7.0;
-                    Log.i("BTNCLICK", "clicked");
-
-//                    updateResultTextView(inputValue);
-                }
+//                if(checkIfOperatorPressed(operator)){
+//                    if(operator.equals("+")){
+//                       num2 = 7.0;
+//
+//                        result =  num1 + num2;
+//                        num1 = result;
+//                        updateShowResultTextView(result);
+//                    }else if(operator.equals("-") ){
+//                        num2 = 7.0;
+//
+//                        result =  num1 - num2;
+//                        num1 = result;
+//                        updateShowResultTextView(result);
+//                    }
+//                    else if(operator.equals("*") ){
+//                        num2 = 7.0;
+//
+//                        result =  num1 * num2;
+//                        num1 = result;
+//                        updateShowResultTextView(result);
+//
+//                    }else if(operator.equals("/")){
+//                        num2 = 7.0;
+//
+//                        result =  num1 / num2;
+//                        num1 = result;
+//                        updateShowResultTextView(result);
+//                    }
+//
+//                }else {
+//                    num1 = 7.0;
+//                    Log.i("BTNCLICK", "clicked");
+//
+//
+//                }
 
                 break;
             case R.id.button8:
@@ -142,15 +140,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.buttonSubtraction:
                 Log.i("BTNSUBT", "subtract button clicked");
                 operator = "-";
-                 lastElement = inputValue.substring(inputValue.length() - 1);
-                if(!lastElement.equals("-")){
-                    if(operator == null || operator.isEmpty()){
-                        operator = "-";
-                        inputValue += "-";
-                    }else {
-                        inputValue = inputValue + "-";
-                    }
-                }
+                operatorPressed(operator);
+
+//                 lastElement = inputValue.substring(inputValue.length() - 1);
+//                if(!lastElement.equals("-")){
+//                    if(operator == null || operator.isEmpty()){
+//                        operator = "-";
+//                        inputValue += "-";
+//                    }else {
+//                        inputValue = inputValue + "-";
+//                    }
+//                }
                 break;
             case R.id.btnClearBtn:
                 operator = "";
@@ -164,29 +164,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case  R.id.buttonMultiply:
                 operator = "*";
-                 lastElement = inputValue.substring(inputValue.length() - 1);
-                if(!lastElement.equals("*")){
-                    if(operator == null || operator.isEmpty()){
-                        operator = "*";
-                        inputValue += "*";
-                    }else {
-                        inputValue = inputValue + "*";
-                    }
-                }
+                operatorPressed(operator);
+
+//                 lastElement = inputValue.substring(inputValue.length() - 1);
+//                if(!lastElement.equals("*")){
+//                    if(operator == null || operator.isEmpty()){
+//                        operator = "*";
+//                        inputValue += "*";
+//                    }else {
+//                        inputValue = inputValue + "*";
+//                    }
+//                }
 
                 break;
                 /*divide*/
             case  R.id.buttonDivide:
                 operator = "/";
-                lastElement = inputValue.substring(inputValue.length() - 1);
-                if(!lastElement.equals("/")){
-                    if(operator == null || operator.isEmpty()){
-                        operator = "/";
-                        inputValue += "/";
-                    }else {
-                        inputValue = inputValue + "/";
-                    }
-                }
+                operatorPressed(operator);
+
+//                lastElement = inputValue.substring(inputValue.length() - 1);
+//                if(!lastElement.equals("/")){
+//                    if(operator == null || operator.isEmpty()){
+//                        operator = "/";
+//                        inputValue += "/";
+//                    }else {
+//                        inputValue = inputValue + "/";
+//                    }
+//                }
 
                 break;
 
@@ -218,15 +222,53 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    private void doMathOperation(String operator, Double numberPressed) {
+        if(checkIfOperatorPressed(operator)){
+            if(operator.equals("+")){
+                num2 = numberPressed;
+
+                result =  num1 + num2;
+                num1 = result;
+                updateShowResultTextView(result);
+            }else if(operator.equals("-") ){
+                num2 = numberPressed;
+
+                result =  num1 - num2;
+                num1 = result;
+                updateShowResultTextView(result);
+            }
+            else if(operator.equals("*") ){
+                num2 = numberPressed;
+
+                result =  num1 * num2;
+                num1 = result;
+                updateShowResultTextView(result);
+
+            }else if(operator.equals("/")){
+                num2 = numberPressed;
+
+                result =  num1 / num2;
+                num1 = result;
+                updateShowResultTextView(result);
+            }
+
+        }else {
+            num1 = numberPressed;
+            Log.i("BTNCLICK", "clicked");
+
+
+        }
+    }
+
     private void operatorPressed(String operator) {
         lastElement = inputValue.substring(inputValue.length() - 1);
-        if(!lastElement.equals("+")){
+        if(!lastElement.equals(operator)){
             if(operator == null || operator.isEmpty()){
-                operator = "+";
-                inputValue += "+";
+                operator = operator;
+                inputValue += operator;
                 Log.i("OPERATORPRESSED", "operator is pressed firstTime");
             }else {
-                inputValue = inputValue + "+";
+                inputValue = inputValue + operator;
                 Log.i("LASTELEMENT",lastElement);
 
 
